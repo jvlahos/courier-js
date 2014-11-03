@@ -9,6 +9,21 @@
       </div><!-- controls -->
     </div><!-- form-group -->
 
+    <div class="form-group">
+      <label for="note">Note</label>
+      <div class="controls">
+          <textarea name="note" id="note" type="text" value=""></textarea>
+      </div><!-- controls -->
+    </div><!-- form-group -->
+
     <input type="submit" value="Submit"/>
   </form>
+
+<hr>
+  <div>
+    <h1>{{post_preview.title}}</h1>
+      <img src="{{post_preview.thumbnail}}"/>
+    <p>{{post_preview.description}}</p>
+    <small>{{post_preview.provider_name}}</small>
+  </div>
 </template>

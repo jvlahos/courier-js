@@ -1,16 +1,21 @@
 Template.postSubmit.events({
-  'submit form': function(e){
+  'change form': function(e){
   	e.preventDefault();
 
-    var post = {
-      url: $(e.target).find('[name=url]').val(),
-      title: $(e.target).find('[name=title]').val()
-    };
+    var data = Embedly.extract($('#url').val());
+    var thumbnail = data.images[0].url;
+    data.thumbnail = thumbnail;
 
-  	alert(post.url);
+    Session.set('post_cache', data);
   }
 
   //todo: parse link info with embedly
 
   //todo: method to insert into db
+});
+
+Template.postSubmit.helpers({
+  'post_preview': function(){
+    return Session.get('post_cache');
+  }
 });
