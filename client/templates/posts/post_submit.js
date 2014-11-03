@@ -13,9 +13,13 @@ Template.postSubmit.events({
       $('#error-dupe').hide();
     }
 
-    //just grab the first thumbnail
-    var thumbnail = data.images[0].url;
-    data.thumbnail = thumbnail;
+    //just grab the first image and make it the thumbnail
+    if(data.images.length>0){
+      var thumbnail = data.images[0].url;
+      data.thumbnail = thumbnail;
+    } else {
+      data.thumbnail = data.favicon_url;
+    }
 
     //cache this crunched data in a session var
     Session.set('post_cache', data);
