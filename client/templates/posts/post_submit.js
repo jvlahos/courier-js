@@ -24,6 +24,13 @@ Template.postSubmit.events({
     //cache this crunched data in a session var
     Session.set('post_cache', data);
   },
+  'blur #headline': function(){
+    var post = _.extend(Session.get('post_cache'), {
+      custom_title: $("#headline").html()
+    });
+
+    Session.set('post_cache', post);
+  },
   'submit form': function(){
       var note = $('#note').val();
       var post = Session.get('post_cache');

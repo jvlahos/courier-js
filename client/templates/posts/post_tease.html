@@ -1,6 +1,10 @@
 <template name="postTease">
 	<img src="{{thumbnail}}" style="width: 100px; float: right;"/>
+  	{{#unless custom_title}}
   	<h1>{{title}}</h1>
+  	{{else}}
+  	<h1>{{custom_title}}</h1>
+  	{{/unless}}
   	<small>{{url}}</small>
   	<p>{{note}}</p>
   	<small>submitted by <strong>{{userName}}</strong></small>
