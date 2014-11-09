@@ -1,0 +1,9 @@
+<template name="userPosts">
+	<h1>Posts by {{userName}}</h1>
+	<div id="main">
+		{{#each posts}}
+			{{>postTease}}
+			<hr>
+	    {{/each}}
+	</div>
+</template>

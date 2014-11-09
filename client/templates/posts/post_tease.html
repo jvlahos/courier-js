@@ -5,9 +5,9 @@
   	{{else}}
   	<h1><a href="{{url}}">{{custom_title}}</a></h1>
   	{{/unless}}
-  	<small>{{url}}</small>
+  	<small>{{#if provider_name}}{{provider_name}}{{else}}{{url}}{{/if}}</small>
   	<p>{{note}}</p>
-  	<small>submitted by <strong>{{userName}}</strong></small>
+  	<small>submitted by <strong><a href="/users/{{userId}}">{{userName}}</a></strong></small>
   	<a href="#" class="saveThis">{{save}}</a>
   	<p>{{saveCount}} saves</p>
     <a href="/posts/{{_id}}">Permalink</a>
