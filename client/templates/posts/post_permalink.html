@@ -1,14 +1,14 @@
-<template name="postTease">
+<template name="postPermalink">
 	<img src="{{thumbnail}}" style="width: 100px; float: right;"/>
   	{{#unless custom_title}}
-  	<h1><a href="{{url}}">{{title}}</a></h1>
+  	<h1>{{title}}</h1>
   	{{else}}
-  	<h1><a href="{{url}}">{{custom_title}}</a></h1>
+  	<h1>{{custom_title}}</h1>
   	{{/unless}}
   	<small>{{url}}</small>
   	<p>{{note}}</p>
   	<small>submitted by <strong>{{userName}}</strong></small>
   	<a href="#" class="saveThis">{{save}}</a>
   	<p>{{saveCount}} saves</p>
-    <a href="/posts/{{_id}}">Permalink</a>
+    <p>{{description}}</p>
 </template>

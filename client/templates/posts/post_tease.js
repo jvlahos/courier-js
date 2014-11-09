@@ -2,10 +2,14 @@ Template.postTease.helpers({
   save: function(){
   	var post = Posts.findOne(this._id);
   	var text = '';
-  	if(_.find(post.savedBy, function(id){ return id === Meteor.userId()})){
-  		return "Saved!";
+  	if(Meteor.userId() != undefined){
+  		if(_.find(post.savedBy, function(id){ return id === Meteor.userId()})){
+  			return "Saved!";
+  		} else {
+  			return "Save";
+  		}
   	} else {
-  		return "Save";
+  		return false;
   	}
   },
   saveCount: function(){
