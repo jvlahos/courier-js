@@ -4,5 +4,13 @@
 			{{>postTease}}
 			<hr>
 	    {{/each}}
+
+	   	{{#if nextPath}}
+	      <a class="load-more" href="{{nextPath}}">Load more</a>
+		{{else}}
+			{{#unless ready}}
+				<p>Loading</p>
+			{{/unless}}
+		{{/if}}
 	</div>
 </template>
