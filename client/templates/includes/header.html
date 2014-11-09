@@ -2,6 +2,7 @@
 	<a href="/">Courier</a>
 	<a href="/submit">Submit a link</a>
 	<a href="/saved">Saved {{saveCount}}</a>
+	{{#if user}}<a href="/users/{{userLink}}">My Links</a>{{/if}}
 
 	<div style="float: right; margin-bottom: 30px">{{>loginButtons}}</div>
 </template>
