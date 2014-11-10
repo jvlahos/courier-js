@@ -15,3 +15,8 @@ Meteor.publish('userPosts', function(id) {
 	check(id, String)
 	return Posts.find({userId : id});
 });
+
+Meteor.publish('savedPosts', function(user_id) {
+	check(user_id, String)
+	return Posts.find({savedBy : user_id});
+});
