@@ -1,9 +1,15 @@
 <template name="postsList">
 	<div id="main">
-		{{#each posts}}
-			{{>postTease}}
+		{{#each group}}
+			<h4>{{dateGroup}}</h4>
+
+			{{#each posts}}
+				{{>postTease}}
 			<hr>
-	    {{/each}}
+			{{/each}}
+		{{/each}}
+
+
 
 	   	{{#if nextPath}}
 	      <a class="load-more" href="{{nextPath}}">Load more</a>
