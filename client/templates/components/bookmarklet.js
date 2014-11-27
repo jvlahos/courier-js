@@ -20,11 +20,8 @@ Template.bookmarklet.events({
           // show this result but route anyway
           if (result.postExists){
             alert('This link has already been posted');
-            $('#error-dupe').show();
           }
       });
-
-      Router.go('postsList');
     }
   }
 );
