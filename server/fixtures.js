@@ -19,3 +19,20 @@ if (Posts.find().count() === 0) {
     description: 'I shared this link because i like it.',
   });
 }
+
+
+//This just adds sample data if the db is empty
+//
+if (Teams.find().count() === 0) {
+  Teams.insert({
+    teamName: 'Upstatement'
+  });
+
+  Teams.insert({
+    teamName: 'Bocoup'
+  });
+
+  Teams.insert({
+    teamName: 'Soso'
+  });
+}

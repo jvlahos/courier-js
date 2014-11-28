@@ -1,0 +1,18 @@
+<template name="teamCreate">
+	<h1>Create a team</h1>
+
+	<form class="form">
+    <div class="form-group">
+      <label for="url">Team Name</label>
+
+      <p id="error-dupe" style="color: red; display: none">This team name is taken</p>
+
+      <div class="controls">
+          <input name="teamName" id="teamName" type="text" value="" placeholder="Team Name" class="form-control"/>
+      </div><!-- controls -->
+    </div><!-- form-group -->
+
+
+    <input type="submit" value="Submit"/>
+  </form>
+</template>
