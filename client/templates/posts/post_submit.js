@@ -33,7 +33,11 @@ Template.postSubmit.events({
   },
   'submit form': function(){
       var note = $('#note').val();
+      var teamName = $('#teamSelect').val();
+      var teamId = Teams.findOne({'teamName':teamName})._id;
+
       var post = Session.get('post_cache');
+      post.teamId = teamId;
       post.note = note;
 
       Meteor.call('postInsert', post, function(error, result) {
@@ -55,5 +59,8 @@ Template.postSubmit.events({
 Template.postSubmit.helpers({
   'post_preview': function(){
     return Session.get('post_cache');
+  },
+  'myTeams': function(){
+    return Teams.find({});
   }
 });

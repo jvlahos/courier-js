@@ -19,6 +19,9 @@ Template.postTease.helpers({
     } else {
       return "0";
     }
+  },
+  teamName: function(){
+    return Teams.findOne(this.teamId).teamName;
   }
 });
 

@@ -22,5 +22,7 @@ Meteor.publish('savedPosts', function(user_id) {
 });
 
 Meteor.publish('teams', function(user_id) {
+  check(user_id, String)
+  //return only the teams that this user is a part of
   return Teams.find({users: user_id});
 });

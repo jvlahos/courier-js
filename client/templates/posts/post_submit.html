@@ -13,6 +13,16 @@
     </div><!-- form-group -->
 
     <div class="form-group">
+      <label for="note">Share with</label>
+      <select id="teamSelect">
+        {{#each myTeams}}
+          <option>{{teamName}}</option>
+        {{/each}}
+      </select>
+    </div><!-- form-group -->
+
+
+    <div class="form-group">
       <label for="note">Note</label>
       <div class="controls">
           <textarea name="note" id="note" type="text" value=""></textarea>
