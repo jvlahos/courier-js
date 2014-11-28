@@ -21,6 +21,6 @@ Meteor.publish('savedPosts', function(user_id) {
 	return Posts.find({savedBy : user_id});
 });
 
-Meteor.publish('teams', function() {
-  return Teams.find({});
+Meteor.publish('teams', function(user_id) {
+  return Teams.find({users: user_id});
 });

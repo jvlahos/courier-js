@@ -14,11 +14,11 @@ Template.postTease.helpers({
   },
   saveCount: function(){
   	var post = Posts.findOne(this._id);
-  	if(post.savedBy.length > 0){
-  		return post.savedBy.length;
-  	} else {
-  		return "0";
-  	}
+  	if (post.savedBy.length > 0 && !undefined){
+      return post.savedBy.length;
+    } else {
+      return "0";
+    }
   }
 });
 
