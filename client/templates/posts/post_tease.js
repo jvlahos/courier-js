@@ -14,7 +14,7 @@ Template.postTease.helpers({
   },
   saveCount: function(){
   	var post = Posts.findOne(this._id);
-  	if(post.savedBy.length > 0){
+  	if(post.savedBy != undefined){
   		return post.savedBy.length;
   	} else {
   		return "0";
